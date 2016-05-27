@@ -16,7 +16,9 @@ DB 101
     * Warehouses: OLAP
         * Redshift
     * Cache
-        * Elasticache
+        * Elasticache - In-memory cache
+            * Memcached
+            * Redis
         
 Relational
 ------------
@@ -37,14 +39,22 @@ Relational
 * Multi-AZ
     * For DR, not for performance scaling
     * Cannot use secondary instance as a read node
+    * Data replication is free
 * Read Replicas
     * For performance improvement of read intensive work loads
-    * Not for all types
+    * Not for all Types
     * Data replication is free of charge
 * Scale up
     * Take snapshot
     * Restore to a larger instance
-* 6 TB max size of storage volume with Provisioned IOPS  
+* 6 TB max size of storage volume with Provisioned IOPS
+    * MySQL/MariaDB
+    * Oracle
+    * PostgreSQL
+* 4 TB max size
+    * SQL Server
+    
+    
 
 DynamoDB
 -----------------
@@ -69,6 +79,7 @@ Redshift
     * 160 GB of storage
 * Multi-Node (MPP)
     * Leader Node
+        * Manages client connections
     * Up to 128 Compute Nodes
 * Columnar Data Storage
     * Faster
